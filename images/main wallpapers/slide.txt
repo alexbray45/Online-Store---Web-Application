@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script>
+            var arrgallery = new Array();
+            //add immages to array
+            for (k = 0; k < 4; k ++){
+                arrgallery[k] = "images/" + k + ".jpg";
+            }
+            //load image
+            var imageIndex = 0; //variable controlling the slideshow
+            function SlideShow(){
+                document.getElementById("slide").setAttribute("src", arrgallery[imageIndex]);
+                imageIndex = (imageIndex == arrgallery.length - 1)? 0 : imageIndex + 1;
+            }
+            window.onload = function(){
+                setInterval("SlideShow()", 5000);
+            }
+        </script>
+    </head>
+    <body>
+        <div id = "divslide">
+            <img scrc = "SlideShow()" id ="slide" onerror = "this.image = null">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,296 @@
+﻿body * {
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.divmaster:not(#divmaincontainer) {
+    border: 1px solid whitesmoke;
+    margin-bottom: 1px;
+}
+
+#divmaincontainer {
+    width: 80%;
+    margin: auto;
+    min-height: 97vh;
+}
+
+
+
+#divbanner {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    height: 93px;
+    background-image: url('../images/main wallpapers/anna-pelzer-igfigp5onv0-unsplash.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+    #divbanner > #Logo {
+        width: 100%;
+        height: 40px;
+        background-image: url('../images/Diamond Storm Canvas Art Print.jpg');
+        background-position: left;
+        width: 10%
+    }
+
+    #divbanner > #sitetitle {
+        text-align: center;
+        color: black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 36px;
+    }
+
+
+
+#divmenu {
+    width: 100%;
+    height: 30px;
+    color: black;
+    padding: 0px;
+    list-style-type: none;
+}
+    /*lightcyan,*/
+    #divmenu > #mainmenu > li {
+        list-style-type: none;
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 17px;
+        vertical-align: top;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-transform: capitalize;
+    }
+
+        #divmenu > #mainmenu > li > a {
+            color: black;
+            text-decoration: none;
+        }
+
+        #divmenu > #mainmenu > li a:hover {
+            color: red;
+        }
+/*My own CSS*/
+/*
+nav ul li {
+    display: inline-block;
+}
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-family: sans-serif;
+        font-weight: bold;
+        margin: 0 10px;
+        line-height: 60px;
+
+        text-transform: uppercase;
+    }
+
+nav a:hover {
+    text-decoration: underline;
+    color: rgba(255, 0, 0, 0.5);
+}
+*/
+#mainmenu {
+    margin: 2px;
+}
+
+/*hide an element from the user's view: SECOND LAST TABLE COLUMN*/
+#divmenu > #mainmenu > li:nth-last-child(2) {
+    /*visibility: hidden;*/
+    /*display:none;*/
+}
+
+#gridusers tr > th:nth-last-child(3),
+#gridusers tr > td:nth-last-child(3) {
+    display: none;
+}
+
+#divcontent {
+    width: 100%;
+    min-height: 66vh;
+
+}
+
+
+#divfooter {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+    #divfooter > p {
+        margin-top: 3px;
+        text-align: center;
+        color: black;
+        font-family: sans-serif;
+        background-color: whitesmoke;
+    }
+
+
+
+
+/*----------styling html forms-----------*/
+
+#fldsetcontrols > label {
+    display: inline-block;
+    width: 160px;
+
+    margin-right: 10px;
+}
+
+    #fldsetcontrols > label[name='lblerror'] {
+        width: 100%;
+        font-size: 16px;
+        text-align: center;
+    }
+
+        /*---Error Message Color Codes---*/
+        #fldsetcontrols > label[name='lblerror'].info {
+            color: dimgray;
+            background-color: aliceblue;
+        }
+
+        #fldsetcontrols > label[name='lblerror'].error {
+            color: red;
+            background-color: lightyellow;
+        }
+
+        #fldsetcontrols > label[name='lblerror'].warning {
+            color: red;
+            background-color: white;
+
+        }
+    /*---*/
+
+    #fldsetcontrols > label:not(label[name='lblerror'])::after {
+        content: '     :';
+        font-size: 20px;
+        color: black;
+
+    }
+
+
+
+
+
+
+
+
+#fldsetcontrols > input[type="text"],
+#fldsetcontrols > select,
+#fldsetcontrols > input[type="password"],
+#fldsetcontrols > input[type="email"],
+#fldsetcontrols > input[type="date"],
+#fldsetcontrols > textarea {
+    width: 450px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    background-color: white;
+    margin-bottom: 3px;
+    height: 27px;
+    color: rebeccapurple;
+}
+
+    #fldsetcontrols > input[type='text']:read-only {
+        background-color: lightcyan;
+    }
+
+#fldsetcontrols > textarea {
+    margin-bottom: 0px;
+}
+
+#fldsetcontrols > input[type="file"] {
+    margin-bottom: 10px;
+}
+
+#fldsetcontrols > legend {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+}
+
+fieldset {
+    border: 1px #C8B4BA;
+    border-radius: 5px;
+}
+
+hr {
+    border-top: 1px solid green;
+}
+
+#fldsetcontrols > input[type="submit"],
+#fldsetcontrols > input[type="reset"] {
+    height: 28px;
+    /*    background-image: url('../images/blue.PNG');
+*/ color: black;
+    min-width: 100px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    box-shadow: 1px 1px 2px gainsboro, -1px -1px 2px gainsboro;
+}
+
+.button:hover {
+    background-color: #C8B4BA;
+    color: white;
+  
+}
+
+   
+
+#divmaincontent > p {
+    margin: 10px 10px 10px 10px;
+    text-align: justify;
+    color: darkcyan;
+}
+
+/*---end styling forms---*/
+
+/**format tables*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+    margin-top: 15px;
+}
+
+table, tr, td, th {
+    border: 1px solid turquoise;
+    background-image: linear-gradient(azure, lightcyan);
+    color: navy;
+}
+
+    tr:first-child {
+        background-color: honeydew;
+        color: dodgerblue;
+    }
+
+#reporttitle {
+    display: block;
+    text-align: center;
+    color: darkcyan;
+    font-weight: bold;
+    font-size: 20px;
+    margin: auto;
+}
+
+/*---end formatting tables---*/
+
+
+/*styiling index.html*/
+
+#divmaincontent {
+    border-radius: 0 0 0 0;
+    width: 100%;
+    height: 400px;
+    background-image: url('../images/nathalia-rosa-rwmibqmoxry-unsplash.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat
+}
+
+/*End of styiling index.html*/

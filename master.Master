@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="FASTLANEWebApplication.master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>FASTLANE HYPERMARKET</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device, initial-scale=1.0" />
+    <link href="styles/style.css" rel="stylesheet" />
+    <style>
+        .auto-style1{
+            width:80%;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <div id="divmaincontainer" class="divmaster">
+
+        <div id="divbanner" class="divmaster">
+
+            <h1 id="sitetitle">
+                
+           &nbsp;WELCOME TO FASTLANE HYPERMARKET STORE </h1>
+     
+        </div>
+   <%
+            //get currently logged user details from session
+            string email = (Session["email"] is null)?"":Session["email"].ToString();
+            string usergroup = (Session["usergroup"] is null)?"":Session["usergroup"].ToString();
+            string fullname = (Session["fullname"] is null)?"":Session["fullname"].ToString();
+
+            //build the menu bar based on user group
+
+
+            %>
+        <div id="divmenu" class="divmaster">
+            <ul id="mainmenu">
+                <li><a href="index.aspx">Home</a></li>
+                <li><a href="aboutUs.aspx">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Products Avaiable</a></li>
+                <li><a href="login.aspx">Login</a></li>
+                <li><a href="register.aspx">Register</a></li>
+
+
+                <% if (usergroup == "customer") {  %>
+
+               <%--any links for customer only come here--%> 
+               
+                <li><a href="logout.aspx">Log Out</a></li>
+
+                <%} %>
+
+                 <% if (usergroup == "sales staff") {  %>
+
+               <%--any links for customer only come here--%> 
+                
+                <li><a href="#">Manage Products</a></li>
+
+                <li><a href="logout.aspx">Log Out</a></li>
+
+                <%} %>
+
+                
+
+                <% if (usergroup == "admin") {  %>
+
+               
+                <li><a href="#">Manage Users</a></li>
+                <li><a href="#">Register Staff</a></li>
+                <li><a href="#.aspx">View Users</a></li>
+                <li><a href="logout.aspx">Log Out</a></li>
+               
+
+
+                 <%} %>
+
+                <li><span id="lblcurrentuser">  </span> <span id="Cuser"><%=fullname %></span> </li>
+            </ul>
+            
+
+        </div>
+
+        <div id="divcontent" class="auto-style1">
+
+            <form id="form1" runat="server">
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" ViewStateMode="Enabled">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </form>
+
+        </div>
+
+       <%-------Footer starts here------%>
+
+                <div id="divfooter" class="divmaster">
+                    
+                        &copy; COPYRIGHT@FASTLANE HYPERMARKET-<%=DateTime.Now.ToString("dd-MMM-yyyy") %>
+                   
+                    </div>
+                <%-------Footer Ends Here---------%>
+        </div>
+</body>
+</html>

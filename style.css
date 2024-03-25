@@ -1,0 +1,198 @@
+﻿body * {
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.master {
+    border: 1px solid turquoise;
+}
+.cols {
+    border: 1px solid turquoise;
+}
+#divcontainer{
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+}
+#divbanner {
+    height: 150px;
+    border-radius: 5px 5px 0px 0px;
+    background-image: url('../images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#divmenu{
+    height: 32px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    background-color:#2e6da4;
+}
+#divmenu > nav > ul#mainmenu>li{
+    display: inline-block;
+    list-style-type:none;
+    margin-right: 10px;
+}
+#divmenu > nav > ul#mainmenu{
+    margin: 5px;
+}
+#divmaincontent{
+    display:flex;
+    flex-direction: row;
+    gap: 3px;
+}
+#divsidebar {
+    min-height: 65vh;
+    width: 30%;
+    background-color: lightcyan;
+}
+#divcontent {
+    min-height: 65vh;
+    width: 70%;
+    overflow-x:auto;
+}
+
+#divfooter {
+    height: 32px;
+    border-radius: 0px 0px 5px 5px;
+    margin-top: 2px;
+    background-color:#0f5f5f;
+    color: navy;
+    font-size: 18px;
+}
+
+#divfooter p{
+    margin:5px;
+    text-align: center;
+}
+
+
+/* ---FORM STYLING--- */
+#fldsetcontrols > #divcontrols > label {
+    width: 19%;
+    display: inline-block;
+}
+label:not(#lblerror):after {
+    content: ' : ';
+    text-align: right;
+    color: blue;
+}
+
+/*buttons*/
+#divbuttons {
+    margin: 0px;
+}
+#divbuttons+br{
+    display:none;
+}
+button, input[type='submit'], input[type='reset'], input[type='button'] {
+    background-color: #5ba3e0;
+    border: #2e6da4;
+    font-family: Arial, Geneva, Arial, Helvetica, sans-serif;
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    border-radius: 2px;
+    line-height: 1.2;
+    text-decoration: none;
+    min-width: 130px;
+}
+
+/*---Error Message formatting---*/
+#fldsetcontrols > #divcontrols > label#lblerror:not(:empty) {
+    width: 100%;
+    border: 1px solid chocolate;
+    border-radius: 3px;
+    color: red;
+    background-image: radial-gradient(greenyellow, lightcyan, azure);
+    font-size: 16px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+#fldsetcontrols label[name='lblerror'] > br:first-child { /*remove first br*/
+    display: none;
+}
+
+/* FORM LAYOUT */
+#fldsetcontrols {
+    padding: 10px;
+    width: 100%;
+}
+
+    #fldsetcontrols input[type='text'],
+    #fldsetcontrols input[type='password'],
+    #fldsetcontrols input[type='email'],
+    #fldsetcontrols select,
+    #fldsetcontrols input[type='date'],
+    #fldsetcontrols textbox { /*CALL: CssClass="textbox" */
+        display: inline-block;
+        box-sizing: border-box;
+        width: 80%;
+        margin-bottom: 5px;
+        padding: 2px;
+        border: 1px solid #b8d8d8;
+        border-radius: 2px;
+        font-size: 10pt;
+        height: 28px;
+    }
+
+/*---end styling forms---*/
+
+/**format tables*/
+#divgrid{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x:scroll;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+}
+
+table, tr, td, th {
+    border: 1px solid turquoise;
+    background-image: linear-gradient(azure, lightcyan);
+    color: navy;
+    padding: 5px;
+}
+
+tr:first-child {
+background-color: honeydew;
+    color: dodgerblue;
+}
+
+/*hide password column*/
+#grid tr > th:nth-child(7),
+    #grid tr > td:nth-child(7){
+    display: none;
+}
+
+#fldsetcontrols > div.divreport > select {
+    margin-left: 200px;
+    width: 200px;
+}
+#fldsetcontrols > div.divreport > input[type='submit'] {
+    width: 150px;
+    text-align: center;
+}
+
+#reporttitle {
+    display: block;
+    text-align: center;
+    color: darkcyan;
+    font-weight: bold;
+    font-size: 20px;
+    margin: auto;
+}
+
+/*---end formatting tables---*/
